@@ -1,5 +1,5 @@
-use piston_window::{rectangle, Context, G2d};
 use piston_window::types::Color;
+use piston_window::{rectangle, text, Context, G2d, Glyphs, Transformed};
 
 const BLOCK_SIZE: f64 = 25.0;
 
@@ -46,4 +46,25 @@ pub fn draw_rectangle(
         con.transform,
         g,
     );
+}
+
+pub fn draw_text(
+    color: Color,
+    text_str: &str,
+    x: f64,
+    y: f64,
+    font_size: u32,
+    glyphs: &mut Glyphs,
+    con: &Context,
+    g: &mut G2d,
+) {
+    text(
+        color,
+        font_size,
+        text_str,
+        glyphs,
+        con.transform.trans(x, y),
+        g,
+    )
+    .unwrap();
 }

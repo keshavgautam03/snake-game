@@ -6,3 +6,4 @@ authors = ["tensor-programming <abeltensor@tensor-programming.com>"]
 [dependencies]
 rand = "0.8"
 piston_window = "0.117.0"
+find_folder = "0.3"
